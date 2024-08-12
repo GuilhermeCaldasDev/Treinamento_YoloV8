@@ -1,0 +1,23 @@
+1. Preparação dos Dados:
+- Coleta de Dados: O primeiro passo é coletar um conjunto de imagens que contenham os objetos que você deseja que o modelo detecte.
+- Anotação: Cada imagem precisa ser anotada, ou seja, você deve desenhar caixas delimitadoras (bounding boxes) ao redor dos objetos e associar uma etiqueta (classe) a cada um. As anotações geralmente são feitas em plataformas como o LabelImg e salvas em formato TXT (YOLO).
+
+2. Configuração do Modelo:
+- Seleção do Arquitetura YOLO: Escolhe-se uma versão da arquitetura YOLO e um modelo pré-treinado (YOLOv8n,YOLOv8s, YOLOv8x, etc.), que serve como ponto de partida.
+Definição da Configuração: Ajusta-se a configuração do modelo, como o número de classes que ele vai detectar, o tamanho das imagens, e outros parâmetros específicos de treinamento.
+
+3. Treinamento:
+Forward Pass (Propagação para frente): As imagens são alimentadas no modelo, que faz previsões iniciais das caixas delimitadoras e das classes.
+Cálculo da Perda (Loss): A perda é calculada comparando as previsões do modelo com as anotações reais das imagens. A perda reflete o quanto as previsões do modelo estão erradas.
+Backward Pass (Propagação para trás): A perda é utilizada para ajustar os pesos da rede por meio do processo de retropropagação, que atualiza os parâmetros do modelo para reduzir a perda.
+Repetição (Epochs): Esse processo é repetido por várias iterações, onde o modelo é constantemente ajustado para melhorar suas previsões.
+
+4. Avaliação e Ajustes:
+Durante e após o treinamento, o modelo é avaliado em um conjunto de validação (imagens que não foram usadas no treinamento) para monitorar seu desempenho.
+Baseado nos resultados de validação, ajustes podem ser feitos nos hiperparâmetros do modelo para melhorar a precisão.
+
+5. Teste Final:
+Após o treinamento, o modelo é testado em um conjunto de dados que ele nunca viu antes (conjunto de teste) para avaliar seu desempenho em um cenário real.
+
+6. Implantação:
+Uma vez satisfeito com o desempenho do modelo, ele pode ser implantado em aplicações para detectar objetos em tempo real ou em outras imagens/vídeos.

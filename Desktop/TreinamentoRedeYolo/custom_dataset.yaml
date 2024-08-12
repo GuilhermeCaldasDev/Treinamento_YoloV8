@@ -1,0 +1,5 @@
+Nesse arquivo é passado o caminho da pasta de treino e da pasta de validação
+
+Em seguidas utlizando o parametro "names", selecionamos as classes a serem treinadas 
+
+Ex = names(0:pessoa, 1:Banco)
